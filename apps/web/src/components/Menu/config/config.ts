@@ -3,12 +3,12 @@ import {
   SwapIcon,
   SwapFillIcon,
   DropdownMenuItems,
-  SwapVertIcon,
-  LockIcon,
+  // SwapVertIcon,
+  // LockIcon,
   EarnIcon,
   EarnFillIcon,
   ChartIcon,
-  ArrowDownIcon,
+  // ArrowDownIcon,
   ArrowDropDownIcon,
 } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
@@ -37,7 +37,8 @@ const config: (
   isDark: boolean,
   languageCode?: string,
   chainId?: number,
-) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
+// ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
+) => ConfigMenuItemsType[] = (t, chainId) =>
   [
     {
       label: t('Trade'),

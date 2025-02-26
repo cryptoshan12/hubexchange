@@ -1,10 +1,10 @@
 import {
-  ChartDisableIcon,
-  ChartIcon,
+  // ChartDisableIcon,
+  // ChartIcon,
   Flex,
   HistoryIcon,
-  HotIcon,
-  HotDisableIcon,
+  // HotIcon,
+  // HotDisableIcon,
   IconButton,
   NotificationDot,
   Swap,
@@ -16,9 +16,9 @@ import RefreshIcon from 'components/Svg/RefreshIcon'
 import { useSwapHotTokenDisplay } from 'hooks/useSwapHotTokenDisplay'
 import { ReactElement, useCallback, useContext } from 'react'
 import { useExpertModeManager } from 'state/user/hooks'
-import styled from 'styled-components'
+// import styled from 'styled-components'
 import { SettingsMode } from '../../../components/Menu/GlobalSettings/types'
-import { SwapFeaturesContext } from '../SwapFeaturesContext'
+// import { SwapFeaturesContext } from '../SwapFeaturesContext'
 
 interface Props {
   title: string | ReactElement
@@ -30,9 +30,9 @@ interface Props {
   onRefreshPrice: () => void
 }
 
-const ColoredIconButton = styled(IconButton)`
-  color: ${({ theme }) => theme.colors.textSubtle};
-`
+// const ColoredIconButton = styled(IconButton)`
+//   color: ${({ theme }) => theme.colors.textSubtle};
+// `
 
 const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
   // subtitle,
@@ -40,11 +40,11 @@ const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
   onRefreshPrice,
   title,
 }) => {
-  const { isChartSupported, isChartDisplayed, setIsChartDisplayed } = useContext(SwapFeaturesContext)
+  // const { isChartSupported, isChartDisplayed, setIsChartDisplayed } = useContext(SwapFeaturesContext)
   const [expertMode] = useExpertModeManager()
-  const toggleChartDisplayed = () => {
-    setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
-  }
+  // const toggleChartDisplayed = () => {
+  //   setIsChartDisplayed((currentIsChartDisplayed) => !currentIsChartDisplayed)
+  // }
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
   const handleOnClick = useCallback(() => onRefreshPrice?.(), [onRefreshPrice])
   const [isSwapHotTokenDisplay, setIsSwapHotTokenDisplay] = useSwapHotTokenDisplay()

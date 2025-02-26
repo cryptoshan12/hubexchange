@@ -24,14 +24,14 @@ import WalletUserMenuItem from './WalletUserMenuItem'
 const UserMenu = () => {
   const { t } = useTranslation()
   const { address: account } = useAccount()
-  const { chainId, isWrongNetwork } = useActiveChainId()
+  const { /* chainId, */ isWrongNetwork } = useActiveChainId()
   const { logout } = useAuth()
   const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
-  const { isInitialized, isLoading, profile } = useProfile()
+  const { isInitialized, /* isLoading, */ profile } = useProfile()
   const [onPresentWalletModal] = useModal(<WalletModal initialView={WalletView.WALLET_INFO} />)
   const [onPresentTransactionModal] = useModal(<WalletModal initialView={WalletView.TRANSACTIONS} />)
   const [onPresentWrongNetworkModal] = useModal(<WalletModal initialView={WalletView.WRONG_NETWORK} />)
-  const hasProfile = isInitialized && !!profile
+  // const hasProfile = isInitialized && !!profile
   const avatarSrc = profile?.nft?.image?.thumbnail
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
