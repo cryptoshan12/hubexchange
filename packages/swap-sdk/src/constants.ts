@@ -1,7 +1,7 @@
 import { ERC20Token } from './entities/token'
 
 export enum ChainId {
-  ETHEREUM = 1116,
+  ETHEREUM = 1,
   RINKEBY = 4,
   GOERLI = 5,
   BSC = 56,
