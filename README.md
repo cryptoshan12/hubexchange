@@ -1,8 +1,8 @@
-# 🥞 Pancake Frontend
+# 🥞 HUB>EXCHANGE
 
 <p align="center">
-  <a href="https://pancakeswap.finance">
-      <img src="https://pancakeswap.finance/logo.png" height="128">
+  <a href="https://hub.xchange">
+      <img src="https:///hub.xchange/logo.png" height="128">
   </a>
 </p>
 
