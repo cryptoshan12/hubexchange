@@ -13,8 +13,8 @@ import {
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import GlobalSettings from 'components/Menu/GlobalSettings'
 import RefreshIcon from 'components/Svg/RefreshIcon'
-import { useSwapHotTokenDisplay } from 'hooks/useSwapHotTokenDisplay'
-import { ReactElement, useCallback, useContext } from 'react'
+// import { useSwapHotTokenDisplay } from 'hooks/useSwapHotTokenDisplay'
+import { ReactElement, useCallback /* , useContext */ } from 'react'
 import { useExpertModeManager } from 'state/user/hooks'
 // import styled from 'styled-components'
 import { SettingsMode } from '../../../components/Menu/GlobalSettings/types'
@@ -47,7 +47,7 @@ const CurrencyInputHeader: React.FC<React.PropsWithChildren<Props>> = ({
   // }
   const [onPresentTransactionsModal] = useModal(<TransactionsModal />)
   const handleOnClick = useCallback(() => onRefreshPrice?.(), [onRefreshPrice])
-  const [isSwapHotTokenDisplay, setIsSwapHotTokenDisplay] = useSwapHotTokenDisplay()
+  // const [isSwapHotTokenDisplay, setIsSwapHotTokenDisplay] = useSwapHotTokenDisplay()
 
   return (
     <Swap.CurrencyInputHeader
