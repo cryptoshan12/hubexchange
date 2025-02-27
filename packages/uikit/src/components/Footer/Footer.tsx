@@ -1,5 +1,5 @@
 import { vars } from "@pancakeswap/ui/css/vars.css";
-import { useIsMounted } from "@pancakeswap/hooks";
+// import { useIsMounted , useTheme  } from "@pancakeswap/hooks";
 import React from "react";
 import { Box, Flex } from "../Box";
 import { Link } from "../Link";
@@ -13,15 +13,16 @@ import {
   StyledToolsContainer,
 } from "./styles";
 
-import { Button } from "../Button";
-import CakePrice from "../CakePrice/CakePrice";
-import LangSelector from "../LangSelector/LangSelector";
-import { ArrowForwardIcon, LogoWithTextIcon } from "../Svg";
-import { ThemeSwitcher } from "../ThemeSwitcher";
+// import { Button } from "../Button";
+// import CakePrice from "../CakePrice/CakePrice";
+// import LangSelector from "../LangSelector/LangSelector";
+import { /* ArrowForwardIcon, */ LogoWithTextIcon } from "../Svg";
+// import { ThemeSwitcher } from "../ThemeSwitcher";
 import { FooterProps } from "./types";
-import { SkeletonV2 } from "../Skeleton";
+// import { SkeletonV2 } from "../Skeleton";
 import { LabelText } from "../../widgets/Menu/components/UserMenu";
-import { alignContent, bottom, right, textAlign, width } from "styled-system";
+// import { alignContent, bottom, right, textAlign, width } from "styled-system";
+// import { baseColors } from "@pancakeswap/ui/tokens/colors";
 
 const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   items,
@@ -34,7 +35,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
   buyCakeLabel,
   ...props
 }) => {
-  const isMounted = useIsMounted();
+  // const isMounted = useIsMounted();
   return (
     <StyledFooter
       data-theme="dark"
@@ -56,8 +57,8 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
         >
           <Box display={["none", null, "block"]}>
             <LogoWithTextIcon width="160px"  />
-            <Box style={{width: "155px",fontSize: "15px",padding: "10px 0px"}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum iaculis odio in volutpat. Cras convallis risus at odio laoreet, vel faucibus ipsum vulputate. Vivamus finibus vulputate ligula.
+            <Box style={{width: "255px",fontSize: "15px",padding: "10px 0px",color:vars.colors.textSubtle}}>
+            At Hub.exchange, we are committed to revolutionizing the way people trade and interact with cryptocurrencies. Our platform offers a seamless, secure, and user-friendly experience, catering to both beginners and seasoned traders.
             </Box>
           </Box>
           {items?.map((item) => (
@@ -69,7 +70,7 @@ const MenuItem: React.FC<React.PropsWithChildren<FooterProps>> = ({
                     <Link
                       data-theme="dark"
                       href={href}
-                      target="_blank"
+                      target={href.startsWith("/") ? "_self" : "_blank"}
                       rel="noreferrer noopener"
                       color={isHighlighted ? vars.colors.warning : "text"}
                       bold={false}
