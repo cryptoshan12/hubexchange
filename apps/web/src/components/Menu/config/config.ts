@@ -66,7 +66,6 @@ const config: (
       label: t('Explore'),
       icon: ChartIcon,
       fillIcon: ChartIcon,
-      disabled: true,
       href: '/explore',
       showItemsOnMobile: false,
       items: [
