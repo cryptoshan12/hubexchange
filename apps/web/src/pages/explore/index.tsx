@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { ResponsiveContainer, XAxis, YAxis, Tooltip, AreaChart, Area } from "recharts";
+import { vars } from "@pancakeswap/ui";
 
 const ExplorePage = () => {
   const [tvlData, setTvlData] = useState([]);
@@ -49,7 +50,7 @@ const ExplorePage = () => {
 
   return (
     <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#fff", padding: "30px", maxWidth: "1200px", margin: "auto" }}>
-      <h1 style={{ textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px", marginTop: "20px" }}>Explore Hub.Exchange Ecosystem</h1>
+      <h1 style={{ textAlign: "center", fontSize: "32px", fontWeight: "bold", marginBottom: "20px", marginTop: "20px", color:vars.colors.contrast }}>Explore Hub.Exchange Ecosystem</h1>
       
       {/* Charts Section */}
       <div
@@ -63,7 +64,7 @@ const ExplorePage = () => {
         
       {/* TVL Chart */}
       <div style={{ backgroundColor: "#f8f9fa", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
-        <h2 style={{ textAlign: "center" }}>BSC TVL</h2>
+        <h2 style={{ textAlign: "center", color:vars.colors.contrast }}>BSC TVL</h2>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={tvlData}>
             <XAxis dataKey="time" />
@@ -76,7 +77,7 @@ const ExplorePage = () => {
 
       {/* Volume Chart */}
       <div style={{ backgroundColor: "#f8f9fa", padding: "20px", borderRadius: "10px", marginBottom: "20px" }}>
-        <h2 style={{ textAlign: "center" }}>24H Trading Volume</h2>
+        <h2 style={{ textAlign: "center", color:vars.colors.contrast }}>24H Trading Volume</h2>
         <ResponsiveContainer width="100%" height={300}>
           <AreaChart data={volumeData}>
             <XAxis dataKey="time" />
@@ -90,28 +91,28 @@ const ExplorePage = () => {
       </div>
 
       {/* Top Tokens */}
-      <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Top 10 BSC Tokens</h2>
+      <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px", color:vars.colors.contrast }}>Top 10 BSC Tokens</h2>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "20px", marginBottom: "40px" }}>
         {tokens.map(token => (
           <div key={token.id} style={{ backgroundColor: "#f8f9fa", padding: "15px", borderRadius: "10px", textAlign: "center" }}>
             <img src={token.image} alt={token.name} style={{ width: "40px" }} />
-            <h3>{token.name}</h3>
-            <p>${token.current_price.toFixed(2)}</p>
+            <h3 style={{ color:vars.colors.contrast}}>{token.name}</h3>
+            <p style={{ color:vars.colors.contrast}}>${token.current_price.toFixed(2)}</p>
           </div>
         ))}
       </div>
 
       {/* Top Trading Pairs */}
-      <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px" }}>Top 10 Trading Pairs</h2>
+      <h2 style={{ fontSize: "24px", fontWeight: "bold", marginBottom: "10px", color:vars.colors.contrast }}>Top 10 Trading Pairs</h2>
       <div style={{ backgroundColor: "#fff", borderRadius: "10px", overflow: "hidden", boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}>
         <div style={{ display: "flex", justifyContent: "space-between", padding: "10px", backgroundColor: "#f8f9fa", fontWeight: "bold", borderBottom: "1px solid #ddd" }}>
-          <div style={{ flex: 1, textAlign: "left" }}>Pair</div>
-          <div style={{ flex: 1, textAlign: "right" }}>24H Volume</div>
+          <div style={{ flex: 1, textAlign: "left", color:vars.colors.contrast }}>Pair</div>
+          <div style={{ flex: 1, textAlign: "right", color:vars.colors.contrast }}>24H Volume</div>
         </div>
         {pairs.map(pair => (
           <div key={`${pair.base}-${pair.target}`} style={{ display: "flex", justifyContent: "space-between", padding: "10px", borderBottom: "1px solid #ddd" }}>
-            <div style={{ flex: 1, textAlign: "left" }}>{pair.base}/{pair.target}</div>
-            <div style={{ flex: 1, textAlign: "right" }}>${parseFloat(pair.volume).toLocaleString()}</div>
+            <div style={{ flex: 1, textAlign: "left", color:vars.colors.contrast }}>{pair.base}/{pair.target}</div>
+            <div style={{ flex: 1, textAlign: "right", color:vars.colors.contrast }}>${parseFloat(pair.volume).toLocaleString()}</div>
           </div>
         ))}
       </div>
