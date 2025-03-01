@@ -10,6 +10,8 @@ import {
   ChartIcon,
   // ArrowDownIcon,
   ArrowDropDownIcon,
+  AboutIcon,
+  AboutFillIcon,
 } from '@pancakeswap/uikit'
 import { ContextApi } from '@pancakeswap/localization'
 import { SUPPORT_ONLY_BSC } from 'config/constants/supportChains'
@@ -85,6 +87,16 @@ const config: (
       href: '/farms',
       icon: EarnIcon,
       fillIcon: EarnFillIcon,
+      showItemsOnMobile: false,
+      items: [
+
+      ],
+    },
+    {
+      label: t('About Us'),
+      href: '/about',
+      icon: AboutIcon,
+      fillIcon: AboutFillIcon,
       showItemsOnMobile: false,
       items: [
 

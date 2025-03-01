@@ -49,6 +49,8 @@ export { default as DiscordIcon } from "./Icons/Discord";
 export { default as EarnFilledIcon } from "./Icons/EarnFilled";
 export { default as EarnFillIcon } from "./Icons/EarnFill";
 export { default as EarnIcon } from "./Icons/Earn";
+export { default as AboutIcon } from "./Icons/About";
+export { default as AboutFillIcon } from "./Icons/AboutFill";
 export { default as EllipsisIcon } from "./Icons/Ellipsis";
 export { default as ErrorIcon } from "./Icons/Error";
 export { default as ExpandIcon } from "./Icons/Expand";
