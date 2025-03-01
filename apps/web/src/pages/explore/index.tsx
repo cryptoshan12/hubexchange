@@ -9,18 +9,17 @@ const ExplorePage = () => {
   const [pairs, setPairs] = useState([]);
 
   const formatNumber = (num) => {
-    if (!num || isNaN(num)) return "$0"; // Handle null, undefined, or non-number values
-  
-    if (num >= 1_000_000_000) {
-      return `$${(num / 1_000_000_000).toFixed(2)}B`; // Billions
-    } else if (num >= 1_000_000) {
-      return `$${(num / 1_000_000).toFixed(2)}M`; // Millions
-    } else if (num >= 1_000) {
-      return `$${(num / 1_000).toFixed(2)}K`; // Thousands
-    }
+    const value = Number(num);
     
-    return `$${num.toFixed(2)}`; // Normal number
-  };
+    if (!value || Number.isNaN(value)) return "$0"; // ✅ No need for 'else'
+
+    if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
+    if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(2)}M`;
+    if (value >= 1_000) return `$${(value / 1_000).toFixed(2)}K`;
+
+    return `$${value.toFixed(2)}`;
+};
+
   
 
   useEffect(() => {
